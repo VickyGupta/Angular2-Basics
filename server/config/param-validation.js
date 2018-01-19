@@ -18,6 +18,28 @@ export default {
     }
   },
 
+    // POST /api/userType
+    createUserType: {
+      body: {
+        name: Joi.string().required()
+      }
+    },
+
+   // POST /api/feature
+    createFeature: {
+      body: {
+        name: Joi.string().required()
+      }
+    },
+
+    // POST /api/feature
+    createRole: {
+      body: {
+        name: Joi.string().required()
+      }
+    },
+
+
   // UPDATE /api/users/:userId
   updateUser: {
     body: {

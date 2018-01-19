@@ -18,6 +18,7 @@ function load(req, res, next, id) {
  * @returns {User}
  */
 function get(req, res) {
+  console.log("affsa")
   return res.json(req.user);
 }
 

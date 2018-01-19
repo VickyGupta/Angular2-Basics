@@ -1,9 +1,7 @@
-import userType from '../models/userType.model';
+import UserType from '../models/userType.model';
 import { request } from 'https';
 
-/**
- * Load user and append to req.
- */
+
 function load(req, res, next, id) {
   userType.get(id)
     .then((usertype) => {
@@ -13,10 +11,7 @@ function load(req, res, next, id) {
     .catch(e => next(e));
 }
 
-/**
- * Get user
- * @returns {User}
- */
+
 function get(req, res) {
   return res.json(req.usertype);
 }

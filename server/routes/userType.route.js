@@ -6,20 +6,20 @@ import userTypeCtrl from '../controllers/userType.controller';
 const router = express.Router(); // eslint-disable-line new-cap
 
 router.route('/')
-  /** GET /api/users - Get list of users */
+  /** GET /api/userType - Get list of userType */
   .get(userTypeCtrl.list)
 
-  /** POST /api/users - Create new user */
-  .post(validate(paramValidation.createUser), userTypeCtrl.create);
+  /** POST /api/userType - Create new userType */
+  .post(validate(paramValidation.createUserType), userTypeCtrl.create);
 
 router.route('/:userId')
-  /** GET /api/users/:userId - Get user */
+  /** GET /api/userType/:userId - Get userType */
   .get(userTypeCtrl.get)
 
-  /** PUT /api/users/:userId - Update user */
-  .put(validate(paramValidation.updateUser), userTypeCtrl.update)
+  /** PUT /api/userType/:userId - Update userType */
+  //.put(validate(paramValidation.updateUserType), userTypeCtrl.update)
 
-  /** DELETE /api/users/:userId - Delete user */
+  /** DELETE /api/userType/:userId - Delete userType */
   .delete(userTypeCtrl.remove);
 
 /** Load user when API with userId route parameter is hit */
