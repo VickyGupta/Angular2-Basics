@@ -1,4 +1,5 @@
 import User from '../models/user.model';
+import { request } from 'https';
 
 /**
  * Load user and append to req.
@@ -27,10 +28,7 @@ function get(req, res) {
  * @returns {User}
  */
 function create(req, res, next) {
-  const user = new User({
-    username: req.body.username,
-    mobileNumber: req.body.mobileNumber
-  });
+  const user = new User(req.body);
 
   user.save()
     .then(savedUser => res.json(savedUser))
@@ -45,9 +43,8 @@ function create(req, res, next) {
  */
 function update(req, res, next) {
   const user = req.user;
-  user.username = req.body.username;
-  user.mobileNumber = req.body.mobileNumber;
-
+  ///user.name = req.body.name;
+  //user.mobile = req.body.mobile;
   user.save()
     .then(savedUser => res.json(savedUser))
     .catch(e => next(e));

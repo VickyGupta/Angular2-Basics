@@ -6,41 +6,12 @@ import APIError from '../helpers/APIError';
 /**
  * User Schema
  */
-const UserSchema = new mongoose.Schema({
+const UserTypeSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
-  },
-  type:{
-    type: String
-  },
-  pin:{
-    type: Number
-  },
-  mobile: {
-    type: Number,
-    required: true,
-    match: [/^[1-9][0-9]{9}$/, 'The value of path {PATH} ({VALUE}) is not a valid mobile number.']
-  },
-  mobileCountryCode: {
-    type: String,
-    default: "+91"
-    
-  },
-  email :{
-    type :String
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  updateAt: {
-    type: Date,
-    default: Date.now
   }
 });
-
-
 
 /**
  * Add your
@@ -49,25 +20,17 @@ const UserSchema = new mongoose.Schema({
  * - virtuals
  */
 
-UserSchema.pre('save', function(next){
-   var now = new Date(); 
-   this.updateAt = now; 
-   if(!this.createdAt){ 
-     this.createdAt = now; 
-   }
-  next(); 
-});
 
 /**
  * Methods
  */
-UserSchema.method({
+UserTypeSchema.method({
 });
 
 /**
  * Statics
  */
-UserSchema.statics = {
+UserTypeSchema.statics = {
   /**
    * Get user
    * @param {ObjectId} id - The objectId of user.
@@ -76,11 +39,11 @@ UserSchema.statics = {
   get(id) {
     return this.findById(id)
       .exec()
-      .then((user) => {
-        if (user) {
-          return user;
+      .then((userType) => {
+        if (userType) {
+          return userType;
         }
-        const err = new APIError('No such user exists!', httpStatus.NOT_FOUND);
+        const err = new APIError('No such userType exists!', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       });
   },
@@ -93,7 +56,7 @@ UserSchema.statics = {
    */
   list({ skip = 0, limit = 50 } = {}) {
     return this.find()
-      .sort({ createdAt: -1 })
+      //.sort({ createdAt: -1 })
       .skip(+skip)
       .limit(+limit)
       .exec();
@@ -101,6 +64,6 @@ UserSchema.statics = {
 };
 
 /**
- * @typedef User
+ * @typedef UserType
  */
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('UserType', UserTypeSchema);
