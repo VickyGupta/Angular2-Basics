@@ -44,8 +44,11 @@ function create(req, res, next) {
  */
 function update(req, res, next) {
   const user = req.user;
-  ///user.name = req.body.name;
-  //user.mobile = req.body.mobile;
+  console.log("user");
+  //console.log(req);
+  console.log(user);
+  user.name = req.body.name  ? req.body.name : user.name;
+  user.mobile = req.body.mobile ? req.body.mobile : user.mobile;
   user.save()
     .then(savedUser => res.json(savedUser))
     .catch(e => next(e));

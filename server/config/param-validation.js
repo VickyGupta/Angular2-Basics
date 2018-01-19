@@ -50,7 +50,7 @@ export default {
       type : Joi.string()
     },
     params: {
-      _id: Joi.string().hex().required()
+      userId: Joi.string().hex().required()
     }
   },
 
