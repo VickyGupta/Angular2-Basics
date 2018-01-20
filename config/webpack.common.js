@@ -30,7 +30,8 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Holiday Yaari',
+  description : 'Holiday Yaari containing detail of all budgeted packages of tours to any or all vital places of tourer interest in Asian country and abroad. Our Company will assist you to create your own trip. Our endeavor are going to be to produce you glorious services throughout your lifetime of your booking.',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR

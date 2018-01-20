@@ -1,0 +1,45 @@
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HttpModule }  from '@angular/http';
+import { 
+  MatCardModule,
+  MatListModule,
+  MatInputModule,
+  MatButtonModule,
+  MatSnackBarModule
+ } from '@angular/material';
+
+import { routes } from './homes.routes';
+import { HomeComponent } from './home.component';
+// import { postDetailComponent } from './post-detail/post-detail.component';
+// import { NewPostComponent } from './new-post/new-post.component';
+// import { EditPostComponent } from './edit-post/edit-post.component';
+// import {PostsFilterPipe} from './posts-filter/posts-filter.pipe'
+
+@NgModule({
+  declarations: [
+    /**
+     * Components / Directives/ Pipes
+     */
+    HomeComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    RouterModule,
+    HttpModule,
+    MatCardModule,
+    MatListModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSnackBarModule
+    // ApolloModule.forRoot(client)
+  ],
+})
+export class HomesModule {
+  public static routes = routes;
+}

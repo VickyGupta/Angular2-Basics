@@ -6,18 +6,19 @@ import APIError from '../helpers/APIError';
 import role from '../models/role.model';
 import feature from '../models/feature.model';
 
-const RoleFeatureMappingSchema = new mongoose.Schema({
-    featureId: {
-        type: Schema.Types.ObjectId,
-        ref: feature
+// This is a transaction table which maps Role to Feature
+const RoleFeatureSchema = new mongoose.Schema({
+      role: {
+        type: mongoose.Schema.Types.ObjectId,
+          ref: 'Role'
       },
-      roleId: {
-        type: Schema.Types.ObjectId,
-          ref: role
+      feature: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Feature'
       }
 });
 
-RoleFeatureMappingSchema.statics = {
+RoleFeatureSchema.statics = {
 
     get(id) {
       return this.findById(id)
@@ -41,4 +42,4 @@ RoleFeatureMappingSchema.statics = {
     }
   };
   
-  export default mongoose.model('RoleFeatureMapping', RoleFeatureMappingSchema);
+  export default mongoose.model('RoleFeature', RoleFeatureSchema);

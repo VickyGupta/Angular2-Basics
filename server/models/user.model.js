@@ -11,36 +11,61 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  type:{
-    type: String
-  },
-  pin:{
-    type: Number
-  },
+  // type:{
+  //   type: Schema.Types.ObjectId, 
+  // 	ref: 'UserType' 
+  // },
   mobile: {
     type: Number,
     required: true,
     match: [/^[1-9][0-9]{9}$/, 'The value of path {PATH} ({VALUE}) is not a valid mobile number.']
   },
-  mobileCountryCode: {
-    type: String,
-    default: "+91"
-    
-  },
   email :{
     type :String
+  },
+  hashed_password: {
+    type: String
+  },
+  salt: String,
+  address:{
+    type: String
+  },
+  pin:{
+    type: Number
+  },
+  city:{
+    type: mongoose.Schema.Types.ObjectId, 
+  	ref: 'City' 
+  },
+  state:{
+    type: mongoose.Schema.Types.ObjectId, 
+  	ref: 'State' 
+  },
+  country:{
+    type: mongoose.Schema.Types.ObjectId, 
+  	ref: 'Country' 
+  },
+  updateAt: {
+    type: Date,
+    default: Date.now
   },
   createdAt: {
     type: Date,
     default: Date.now
   },
-  updateAt: {
-    type: Date,
-    default: Date.now
-  }
 });
 
 
+/**
+ * Virtuals
+ */
+UserSchema.virtual('password').set(function(password) {
+  this._password = password;
+  this.salt = this.makeSalt();
+  this.hashed_password = this.hashPassword(password);
+}).get(function() {
+  return this._password;
+});
 
 /**
  * Add your
