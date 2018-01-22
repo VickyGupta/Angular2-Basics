@@ -5,6 +5,7 @@ import postRoutes from './post.route';
 import featureRoutes from './feature.route';
 import userTypeRoutes from './userType.route';
 import roleRoutes from './role.route';
+import stateRoutes from './state.route';
 const router = express.Router(); // eslint-disable-line new-cap
 
 /** GET /health-check - Check service health */
@@ -24,6 +25,8 @@ router.use('/userType', userTypeRoutes);
 
 router.use('/feature', featureRoutes);
 
-router.use('/role', roleRoutes);
+router.use('/role', roleRoutes); 
+
+router.use('/state', stateRoutes);
 
 export default router;
