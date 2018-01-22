@@ -26,7 +26,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatCheckboxModule,
-  MatRadioModule
+  MatRadioModule,
+  MatAutocompleteModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -91,7 +92,8 @@ type StoreType = {
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatAutocompleteModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     ApolloModule.forRoot(client),
   ],

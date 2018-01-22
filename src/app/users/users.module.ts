@@ -3,21 +3,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule }  from '@angular/http';
-import { 
+import {
   MatCardModule,
   MatListModule,
   MatInputModule,
   MatButtonModule,
-  MatSnackBarModule
- } from '@angular/material';
+  MatSnackBarModule,
+  MatAutocompleteModule
+} from '@angular/material';
 
 import { routes } from './users.routes';
 import { UserListComponent } from './user-list/user-list.component';
-import { UsersService } from './users.service'
-// import { postDetailComponent } from './post-detail/post-detail.component';
-// import { NewPostComponent } from './new-post/new-post.component';
-// import { EditPostComponent } from './edit-post/edit-post.component';
-// import {PostsFilterPipe} from './posts-filter/posts-filter.pipe'
+import { UsersService } from './users.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +34,8 @@ import { UsersService } from './users.service'
     MatListModule,
     MatInputModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatAutocompleteModule
     // ApolloModule.forRoot(client)
   ],
   providers: [UsersService]
