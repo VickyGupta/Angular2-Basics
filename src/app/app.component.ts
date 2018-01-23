@@ -22,9 +22,9 @@ import { PostsService } from './posts/posts.service';
     <header>
       <mat-toolbar color="warn">
         <a [routerLink]="['/']" class="logotTxt">Holiday Yarri</a>
-        <!-- <a class="links" [routerLink]="['/posts']">Posts</a>
-        <a class="links" [routerLink]="['/react']">React</a>
-        <a class="links" href="/api/graphql">GraphQL browser</a> -->        
+        <a class="links" [routerLink]="['/users']">Users</a>
+        <a class="links" [routerLink]="['/hotels']">Hotels</a>
+        <!-- <a class="links" href="/api/graphql">GraphQL browser</a>  -->      
       </mat-toolbar>
     </header>
     <router-outlet></router-outlet>

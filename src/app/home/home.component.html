@@ -2,39 +2,35 @@
   <!--<div id="daphne"><img src="../../assets/img/daphne.png">
   </div>-->
   <mat-card class="example-card">
-  
+    <div class="example-container">
+      <form class="example-container" [formGroup]="options">
+        <mat-checkbox>Hide required marker</mat-checkbox>
+        <div>
+          <label>Float label: </label>
+          <mat-radio-group>
+            <mat-radio-button value="auto">Auto</mat-radio-button>
+            <mat-radio-button value="always">Always</mat-radio-button>
+            <mat-radio-button value="never">Never</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
 
+      <div class="example-container">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Input">
+        </mat-form-field>
 
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
 
-<div class="example-container">
-  <form class="example-container" [formGroup]="options">
-    <mat-checkbox>Hide required marker</mat-checkbox>
-    <div>
-      <label>Float label: </label>
-      <mat-radio-group>
-        <mat-radio-button value="auto">Auto</mat-radio-button>
-        <mat-radio-button value="always">Always</mat-radio-button>
-        <mat-radio-button value="never">Never</mat-radio-button>
-      </mat-radio-group>
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
-  </form>
+  </mat-card>
 
- <div class="example-container">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Input">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Textarea"></textarea>
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-select placeholder="Select">
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-</div>
-</mat-card>
-  
 </div>

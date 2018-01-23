@@ -7,9 +7,14 @@ import {
   MatCardModule,
   MatListModule,
   MatInputModule,
+  MatSelectModule,
   MatButtonModule,
   MatSnackBarModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatExpansionModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatIconModule
 } from '@angular/material';
 
 import { routes } from './hotels.routes';
@@ -33,9 +38,14 @@ import { HotelsService } from './hotels.service';
     MatCardModule,
     MatListModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule
     // ApolloModule.forRoot(client)
   ],
   providers: [HotelsService]
