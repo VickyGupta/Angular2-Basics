@@ -30,7 +30,7 @@ function get(req, res) {
  */
 function create(req, res, next) {
   const user = new User(req.body);
-
+  console.log("sdfdsf");
   user.save()
     .then(savedUser => res.json(savedUser))
     .catch(e => next(e));

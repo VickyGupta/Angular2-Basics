@@ -3,9 +3,9 @@ import { request } from 'https';
 
 
 function load(req, res, next, id) {
-  userType.get(id)
+  UserType.get(id)
     .then((usertype) => {
-      req.usertype = usertype; // eslint-disable-line no-param-reassign
+      req.userType = usertype; // eslint-disable-line no-param-reassign
       return next();
     })
     .catch(e => next(e));
@@ -13,7 +13,7 @@ function load(req, res, next, id) {
 
 
 function get(req, res) {
-  return res.json(req.usertype);
+  return res.json(req.userType);
 }
 
 function create(req, res, next) {
@@ -27,6 +27,9 @@ function create(req, res, next) {
 
 function update(req, res, next) {
   const userType = req.userType;
+  console.log("asfdsfdsf");
+  console.log(userType);
+  userType.name = req.body.name  ? req.body.name : userType.name;
   userType.save()
     .then(savedUserType => res.json(savedUserType))
     .catch(e => next(e));

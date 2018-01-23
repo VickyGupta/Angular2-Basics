@@ -12,17 +12,17 @@ router.route('/')
   /** POST /api/userType - Create new userType */
   .post(validate(paramValidation.createUserType), userTypeCtrl.create);
 
-router.route('/:userId')
-  /** GET /api/userType/:userId - Get userType */
+router.route('/:userTypeId')
+  /** GET /api/userType/:userTypeId - Get userType */
   .get(userTypeCtrl.get)
 
-  /** PUT /api/userType/:userId - Update userType */
-  //.put(validate(paramValidation.updateUserType), userTypeCtrl.update)
+  /** PUT /api/userType/:userTypeId - Update userType */
+  .put(validate(paramValidation.updateUserType), userTypeCtrl.update)
 
-  /** DELETE /api/userType/:userId - Delete userType */
+  /** DELETE /api/userType/:userTypeId - Delete userType */
   .delete(userTypeCtrl.remove);
 
-/** Load user when API with userId route parameter is hit */
-router.param('userId', userTypeCtrl.load);
+/** Load user when API with userTypeId route parameter is hit */
+router.param('userTypeId', userTypeCtrl.load);
 
 export default router;
