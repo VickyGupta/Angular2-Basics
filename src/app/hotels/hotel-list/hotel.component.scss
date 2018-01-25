@@ -26,7 +26,7 @@ example-form {
   width: 100%;
 }
 
-.example-headers-align .mat-expansion-panel-header-title, 
+.example-headers-align .mat-expansion-panel-header-title,
 .example-headers-align .mat-expansion-panel-header-description {
   flex-basis: 0;
 }
@@ -34,4 +34,10 @@ example-form {
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
   align-items: center;
+}
+
+example-viewer-wrapper {
+  border: 1px solid rgba(0,0,0,.03);
+  box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+  margin: 4px;
 }

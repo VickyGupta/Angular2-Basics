@@ -1,0 +1,223 @@
+<div class="package">
+  <mat-card>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>Travel Detail</b>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput [matDatepicker]="picker1" name="startdate" placeholder="Travel start date" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput [matDatepicker]="picker2" name="enddate" placeholder="Travel end date" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <mat-panel-title>
+        <b>Pickup And Drop City</b>
+      </mat-panel-title>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <mat-select placeholder="Select Pickup City">
+          <mat-option value="mysore">mysore</mat-option>
+          <mat-option value="chennai">chennai</mat-option>
+          <mat-option value="delhi">delhi</mat-option>
+          <mat-option value="hyderabad">hyderbad</mat-option>
+          <mat-option value="kerala">kerala</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <mat-select placeholder="Select Drop City">
+          <mat-option value="mysore">mysore</mat-option>
+          <mat-option value="chennai">chennai</mat-option>
+          <mat-option value="delhi">delhi</mat-option>
+          <mat-option value="hyderabad">hyderbad</mat-option>
+          <mat-option value="kerala">kerala</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- <mat-form-field class="package-half-mat-form-field">
+        <input matInput placeholder="Travel Duration">
+      </mat-form-field> -->
+
+
+
+      <mat-panel-title>
+        <b>Pax Detail</b>
+      </mat-panel-title>
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput type="number" placeholder="Number of pax">
+      </mat-form-field>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput type="number" placeholder="Number of child">
+      </mat-form-field>
+
+
+
+      <mat-panel-title>
+        <b> Lead Pax Details</b>
+      </mat-panel-title>
+
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput type="text" placeholder="Lead pax name">
+      </mat-form-field>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput type="tel" placeholder="Mobile number">
+      </mat-form-field>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput type="email" placeholder="email">
+      </mat-form-field>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+
+
+
+
+
+
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>Trip Detail</b>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <mat-select placeholder="Select Pickup City">
+          <mat-option value="mysore">mysore</mat-option>
+          <mat-option value="chennai">chennai</mat-option>
+          <mat-option value="delhi">delhi</mat-option>
+          <mat-option value="hyderabad">hyderbad</mat-option>
+          <mat-option value="kerala">kerala</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-panel-title>
+        <b>Select Hotel</b>
+      </mat-panel-title>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <mat-select placeholder="Select Hotel">
+          <mat-option value="credit card">Single</mat-option>
+          <mat-option value="debit card">Double</mat-option>
+          <mat-option value="credit card">Triple</mat-option>
+          <mat-option value="debit card">Quad</mat-option>
+          <mat-option value="credit card">Queen</mat-option>
+          <mat-option value="debit card">King</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="package-quater-mat-form-field">
+        <mat-select placeholder="Select Hotel type">
+          <mat-option value="credit card">Single</mat-option>
+          <mat-option value="debit card">Double</mat-option>
+          <mat-option value="credit card">Triple</mat-option>
+          <mat-option value="debit card">Quad</mat-option>
+          <mat-option value="credit card">Queen</mat-option>
+          <mat-option value="debit card">King</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="package-quater-mat-form-field">
+        <input matInput type="number" placeholder="Number of rooms">
+      </mat-form-field>
+
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput [matDatepicker]="picker5" name="checkindate" placeholder="checkin date" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+        <mat-datepicker #picker5></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="package-half-mat-form-field">
+        <input matInput [matDatepicker]="picker6" name="checkoutdate" placeholder="checkout date" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+        <mat-datepicker #picker6></mat-datepicker>
+      </mat-form-field>
+
+      <mat-slide-toggle class="package-quater-mat-form-field" value="yes">
+        Extar bed
+      </mat-slide-toggle>
+
+      <mat-slide-toggle class="package-quater-mat-form-field" value="yes">
+        Extra bed for child
+      </mat-slide-toggle>
+
+      <mat-slide-toggle class="package-quater-mat-form-field" value="yes">
+        Extra lunch
+      </mat-slide-toggle>
+
+      <mat-slide-toggle class="package-quater-mat-form-field" value="yes">
+        Extra lunch for child
+      </mat-slide-toggle>
+
+      <mat-slide-toggle class="package-quater-mat-form-field" value="yes">
+        Extra dinner
+      </mat-slide-toggle>
+
+      <mat-slide-toggle class="package-quater-mat-form-field" value="yes">
+        Extra dinner for child
+      </mat-slide-toggle>
+
+
+      <mat-panel-title>
+        <b>Select Cab</b>
+      </mat-panel-title>
+
+
+      <mat-form-field class="package-half-mat-form-field">
+        <mat-select placeholder="Select Cab">
+          <mat-option value="credit card">SUV 8 -seater</mat-option>
+          <mat-option value="debit card">Sedan 5- seater</mat-option>
+          <mat-option value="credit card">Tempo</mat-option>
+          <mat-option value="debit card">Hatch Back 4 -seater</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" color="primary">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>Payment Detail</b>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field class="example-half-width">
+        <input matInput placeholder="Advanceamount">
+      </mat-form-field>
+
+      <mat-form-field class="example-half-width">
+        <input matInput placeholder="Payment Detail">
+      </mat-form-field>
+
+      <mat-form-field class="example-half-width">
+        <mat-select placeholder="Payment Option">
+          <mat-option value="credit card">creditcard</mat-option>
+          <mat-option value="debit card">debitcard</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-card>
+</div>

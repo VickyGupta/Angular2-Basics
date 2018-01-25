@@ -1,0 +1,21 @@
+/*styles for home content only*/
+$btncolor: #c4a89dea;
+$width-half: 45%;
+$width-quater: 25%;
+
+
+mat-card {
+  max-width: 100%;
+  margin: auto;
+  background-color: $btncolor;
+}
+.package-half-mat-form-field {
+  width : $width-half;
+  padding: 10px;
+}
+
+.package-quater-mat-form-field {
+  width : $width-quater;
+  padding: 10px;
+}
+

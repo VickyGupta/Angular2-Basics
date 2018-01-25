@@ -27,6 +27,13 @@ import { State } from '../state.class';
   styleUrls: ['./hotel.component.scss'],
 })
 export class HotelListComponent implements OnInit {
+  public displayMode: string = 'default';
+  public multi = false;
+  public hideToggle = false;
+  public disabled = false;
+  public showPanel3 = true;
+  public expandedHeight: string;
+  public collapsedHeight: string;
   public countryCtrl: FormControl;
   public stateCtrl: FormControl;
   public cityCtrl: FormControl;
